@@ -20,7 +20,6 @@ class Student:
             return 'Ошибка'
 
     def _average_rating(self):
-        """Рассчитывает среднюю оценку из всех курсов (с исправлением)"""
         all_grades = []
         for grades in self.grades.values():
             all_grades.extend(grades)
@@ -75,7 +74,7 @@ class Lecturer(Mentor):
         self.grades = {}
 
     def _average_rating(self):
-        """Рассчитывает среднюю оценку за лекции"""
+
         all_grades = []
         for grades in self.grades.values():
             all_grades.extend(grades)
