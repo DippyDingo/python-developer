@@ -97,7 +97,8 @@
 [ 
     { 
         "file_name": "SPD-130/Hello, world!.jpg", 
-        "text": "Hello, world!", "size_bytes": 13245 
+        "text": "Hello, world!", 
+"size_bytes": 13245 
     }, 
     { 
         "file_name": "SPD-130/Я люблю Python.jpg", 
