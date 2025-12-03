@@ -31,7 +31,7 @@
 1. **Клонируйте репозиторий:**
    
    ```bash
-   git clone <URL_ВАШЕГО_РЕПОЗИТОРИЯ> 
+   git clone <URL_РЕПОЗИТОРИЯ> 
    cd <название_папки_проекта>
    ```
 
@@ -95,16 +95,16 @@
 
 ```json
 [ 
-    { 
-        "file_name": "SPD-130/Hello, world!.jpg", 
-        "text": "Hello, world!", 
-"size_bytes": 13245 
+    {
+         "file_name": "SPD-130/Hello, world!.jpg",
+         "text": "Hello, world!",
+         "size_bytes": 13245 
     }, 
-    { 
-        "file_name": "SPD-130/Я люблю Python.jpg", 
-        "text": "Я люблю Python", 
-        "size_bytes": 12876 
-    } 
+    {
+         "file_name": "SPD-130/Я люблю Python.jpg",
+         "text": "Я люблю Python",
+         "size_bytes": 12876
+    }
 ]
 ```
 
