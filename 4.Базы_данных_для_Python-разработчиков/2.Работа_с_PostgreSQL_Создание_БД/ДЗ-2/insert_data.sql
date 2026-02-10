@@ -95,3 +95,26 @@ INSERT INTO collection_track (collection_id, track_id) VALUES
 (7, 2),  -- Golden Oldies - Something
 (4, 17), -- Pop Hits 2020 - Break My Soul
 (3, 15); -- Rock Legends - My Way
+
+
+INSERT INTO track (title, duration, album_id) VALUES 
+-- Треки, которые ДОЛЖНЫ попасть в выборку
+('my own', 200, 1),
+('own my', 200, 1),
+('my', 200, 1),
+('oh my god', 200, 1),
+-- Треки, которые НЕ должны попасть в выборку
+('myself', 200, 1),
+('by myself', 200, 1),
+('bemy self', 200, 1),
+('myself by', 200, 1),
+('by myself by', 200, 1),
+('beemy', 200, 1),
+('premyne', 200, 1),
+-- Русские аналоги
+('мой дом', 200, 1),
+('дом мой', 200, 1),
+('мой', 200, 1),
+('о мой бог', 200, 1),
+('myself', 200, 1), 
+('мойсобес', 200, 1); 

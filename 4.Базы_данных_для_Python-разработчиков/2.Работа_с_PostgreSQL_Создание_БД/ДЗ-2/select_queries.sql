@@ -25,7 +25,12 @@ WHERE name NOT LIKE '% %' AND name NOT LIKE '%-%';
 -- 5. Название треков, которые содержат слово «мой» или «my»
 SELECT title 
 FROM track 
-WHERE LOWER(title) LIKE '%мой%' OR LOWER(title) LIKE '%my%';
+WHERE 
+    -- Регулярное выражение для поиска целых слов
+    -- \m - начало слова, \M - конец слова (в PostgreSQL)
+    -- | - или
+    title ~* '\m(my|мой)\M'
+ORDER BY title;
 
 -- Задание 3
 -- 1. Количество исполнителей в каждом жанре
