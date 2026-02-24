@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Список авто{% endblock title %}
+
+{% block content %}
+	<section>
+		<div class="container">
+			<div class="text-center">
+				<h1>Список автомобилей</h1>
+				<br>
+<!--				<div class="row">-->
+<!--					<div class="col-lg-6 col-xs-12 col-lg-offset-3">-->
+<!--						<div class="form">-->
+<!--							<form action="{% url 'list' %}" method="get">-->
+<!--								<div class="form-group">-->
+<!--									<label class="control-label">Поиск авто</label>-->
+<!--									<div class="input-group">-->
+<!--										<input type="text" class="form-control" placeholder="Mercedes ..." name="q">-->
+<!--										<span class="input-group-btn">-->
+<!--											<button class="btn btn-default" type="submit">Найти!</button>-->
+<!--										</span>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</form>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+			</div>
+		</div>
+	</section>
+	<section class="section-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-xs-12">
+					<div class="row">
+						{% for car in cars %}
+							<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="courses-thumb courses-thumb-secondary">
+								<div class="courses-top">
+									<div class="courses-image">
+										<img src="{{ car.image.url }}" class="img-responsive" alt="">
+									</div>
+								</div>
+
+								<div class="courses-detail">
+									<h3><a href="car-details.html">{{ car.model }}</a></h3>
+									<p class="lead">Цена: <strong>{{ car.price | floatformat:"-2g" }} ₽</strong></p>
+									<p>{{ car.volume }} л. &nbsp;&nbsp;/&nbsp;&nbsp; {{ car.get_fuel_type_display }} &nbsp;&nbsp;/&nbsp;&nbsp; {{ car.year }} &nbsp;&nbsp;/&nbsp;&nbsp;
+										{{ car.get_gearbox_display }}</p>
+								</div>
+
+								<div class="courses-info">
+									<a href="{% url 'details' car.id %}" class="section-btn btn btn-primary btn-block">Подробнее</a>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}
