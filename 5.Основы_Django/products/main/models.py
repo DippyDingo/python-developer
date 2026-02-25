@@ -33,7 +33,7 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
     text = models.TextField()
     mark = models.PositiveSmallIntegerField(choices=MARK_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
